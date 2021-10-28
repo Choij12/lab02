@@ -83,6 +83,30 @@ function correctAnswerCount() {
 }
 correctAnswerCount();
 
+function question7(){
+  let userGuess = prompt('What are some of my favorite cities?','within the United States');
+  userGuess = userGuess.toLowerCase();
+  let cities = ['seattle', 'new york', 'portland', 'los angeles', 'san diego', 'miami'];
+  let favorite = 'new york';
+  for(let i = 0; i <=6; i++){
+    console.log('Guess for the favorite city is ' + userGuess);
+    if (userGuess === favorite){
+      alert('Wow, New York is my favorite city!');
+      count++;
+      break;
+    } else if (cities.includes(userGuess) && i !==6){
+      userGuess = prompt('Not my favorite.. but you are close.');
+      userGuess = userGuess.toLowerCase();
+      console.log('Your guess is? ' + userGuess);
+    } else if (cities.includes(userGuess) && i !==6){
+      userGuess = prompt('Is that even in the United States?');
+      console.log('Your guess is? ' + userGuess);
+    }else{
+      alert('Sorry, my top favorite city is, New York.. but you could have chosen, seattle', 'portland', 'los angeles', 'san diego', 'miami');
+    }
+  }
+}
+
 
 //function knowMoreAboutMe(){
 //let userAnswer = prompt('Would you like to know more about me?');
