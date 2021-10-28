@@ -49,63 +49,91 @@ function numberGame() {
 
 numberGame();
 
-let userName;
-let count = 0;
-let i;
-let answerOptions = ['yes', 'no'];
-let questions = ['Would you like to know more about me?','Am I a student at Code Fellows?','Am I a Veteran?','Am I korean?','Do I live in Seattle?'];
+// let userName;
+// let count = 0;
+// let i;
+// let answerOptions = ['yes', 'no'];
+// let questions = ['Would you like to know more about me?','Am I a student at Code Fellows?','Am I a Veteran?','Am I korean?','Do I live in Seattle?'];
 
-let correctAnswer = ['yes', 'yes' , 'yes,' , 'yes' , 'yes'];
-let correctAnswerList = ['Of course, you would like to know more about me' , 'Yes, I am a student at Code Fellows.' , 'I am a Veteran.' , 'I am Korean.' , 'I do live in Seattle'];
+// let correctAnswer = ['yes', 'yes' , 'yes,' , 'yes' , 'yes'];
+// let correctAnswerList = ['Of course, you would like to know more about me' , 'Yes, I am a student at Code Fellows.' , 'I am a Veteran.' , 'I am Korean.' , 'I do live in Seattle'];
 
-let correctAnswerId = ['#me' , '#student' , '#veteran' , '#korean' , '#seattle'];
-let wrongAnswer = 'Sorry, wrong answer!';
+// let correctAnswerId = ['#me' , '#student' , '#veteran' , '#korean' , '#seattle'];
+// let wrongAnswer = 'Sorry, wrong answer!';
 
-function allAnswer(){
-  for(i = 0; i < questions.length; i++) {
-    let userAnswer = prompt(questions[i]);
-    let answerLowerCase = userAnswer.toLowerCase();
+// function allAnswer(){
+//   for(i = 0; i < questions.length; i++) {
+//     let userAnswer = prompt(questions[i]);
+//     let answerLowerCase = userAnswer.toLowerCase();
 
-    if (answerLowerCase === correctAnswer[i]) {
-      alert("Correct!");
-      console.log(count);
-    } else {
-      alert(wrongAnswer);
-      console.log(count);
+//     if (answerLowerCase === correctAnswer[i]) {
+//       alert("Correct!");
+//       console.log(count);
+//     } else {
+//       alert(wrongAnswer);
+//       console.log(count);
+//     }
+//   }
+// }
+
+// allAnswer();
+
+// function correctAnswerCount() {
+//   document.getElementById('incorrect').textContent = 'You answered ${count}/5 questions right!';
+// }
+// correctAnswerCount();
+
+function favCity() {
+  let favoriteCities = ['New York', 'San Deigo', 'Miami'];
+
+  let maxAttempts = 6;
+  let gotIt = false;
+  let correctA = true; 
+  for (let count = 1; count <= maxAttempts; count += 1) {
+
+    let response = prompt('What are my favorite cities');
+
+    for (let i = 0; i < favoriteCities.length; i += 1) {
+      let fav = favoriteCities[i];
+      if (fav === response) {
+        alert('You got it right!');
+        correctA = true;
+        break;
+      }
     }
-  }
-}
 
-allAnswer();
-
-function correctAnswerCount() {
-  document.getElementById('incorrect').textContent = 'You answered ${count}/5 questions right!';
-}
-correctAnswerCount();
-
-function question7(){
-  let userGuess = prompt('What are some of my favorite cities?','within the United States');
-  userGuess = userGuess.toLowerCase();
-  let cities = ['seattle', 'new york', 'portland', 'los angeles', 'san diego', 'miami'];
-  let favorite = 'new york';
-  for(let i = 0; i <=6; i++){
-    console.log('Guess for the favorite city is ' + userGuess);
-    if (userGuess === favorite){
-      alert('Wow, New York is my favorite city!');
-      count++;
+    if (correctA) {
       break;
-    } else if (cities.includes(userGuess) && i !==6){
-      userGuess = prompt('Not my favorite.. but you are close.');
-      userGuess = userGuess.toLowerCase();
-      console.log('Your guess is? ' + userGuess);
-    } else if (cities.includes(userGuess) && i !==6){
-      userGuess = prompt('Is that even in the United States?');
-      console.log('Your guess is? ' + userGuess);
-    }else{
-      alert('Sorry, my top favorite city is, New York.. but you could have chosen, seattle', 'portland', 'los angeles', 'san diego', 'miami');
     }
   }
+
+  alert(favCities);
 }
+favCity();
+
+// function question7(){
+//   let userGuess = prompt('What are some of my favorite cities?','within the United States');
+//   userGuess = userGuess.toLowerCase();
+//   let cities = ['seattle', 'new york', 'portland', 'los angeles', 'san diego', 'miami'];
+//   let favorite = 'new york';
+//   for(let i = 0; i <=6; i++){
+//     console.log('Guess for the favorite city is ' + userGuess);
+//     if (userGuess === favorite){
+//       alert('Wow, New York is my favorite city!');
+//       count++;
+//       break;
+//     } else if (cities.includes(userGuess) && i !==6){
+//       userGuess = prompt('Not my favorite.. but you are close.');
+//       userGuess = userGuess.toLowerCase();
+//       console.log('Your guess is? ' + userGuess);
+//     } else if (cities.includes(userGuess) && i !==6){
+//       userGuess = prompt('Is that even in the United States?');
+//       console.log('Your guess is? ' + userGuess);
+//     }else{
+//       alert('Sorry, my top favorite city is, New York.. but you could have chosen, seattle', 'portland', 'los angeles', 'san diego', 'miami');
+//     }
+//   }
+// }
 
 
 //function knowMoreAboutMe(){
